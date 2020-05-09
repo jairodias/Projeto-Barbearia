@@ -126,4 +126,57 @@ header {
 .h1-login:hover {
   color: #ffffff;
 }
+
+.navbar {
+  font-family: "Lobster", cursive;
+  background: #17141d;
+  padding: 20px 20px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.nav-icon-barbearia {
+  width: 60px;
+  height: 60px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.nav-icon-barbearia:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+ul > .nav-item {
+  padding-left: 200px !important;
+}
+
+.nav-item > a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  font-family: "Lobster", cursive;
+  font-weight: bold;
+  font-size: 23px;
+  display: inline !important;
+}
+
+.func {
+  padding-left: 10% !important;
+}
+
+.hand {
+  padding-left: 15% !important;
+}
+
+.nav-item {
+  width: 500px;
+  margin-left: 3%;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(59, 13, 13, 0.6)), to(rgba(59, 13, 13, 0.8))), url("../img/bg.jpg") center/cover fixed no-repeat;
+  background: linear-gradient(to right, rgba(59, 13, 13, 0.6), rgba(59, 13, 13, 0.8)), url("../img/bg.jpg") center/cover fixed no-repeat;
+}
 /*# sourceMappingURL=principal.css.map */
