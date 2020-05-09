@@ -1,0 +1,129 @@
+.info {
+  background: #17141d;
+}
+
+.info a {
+  text-decoration: none;
+  color: rgba(100, 0, 0, 0.9);
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.info a:hover {
+  color: #ffffff;
+}
+
+#name-barbearia {
+  color: #ffffff;
+  font-size: 40px;
+  font-family: "Lobster", cursive;
+  word-spacing: 0.6rem;
+  -webkit-box-shadow: 0px 4px #FF3300;
+          box-shadow: 0px 4px #FF3300;
+  margin-right: 40%;
+}
+
+.icon-barbearia {
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  #name-barbearia {
+    margin-right: 10%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  min-height: calc(100vh - 89px);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(4, 0, 0, 0.4))), url("../img/unnamed.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(4, 0, 0, 0.4)), url("../img/unnamed.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.card-login {
+  border-radius: 10px;
+  position: absolute;
+  margin-left: 34%;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  margin-top: 6%;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.card-login:hover {
+  background: rgba(100, 0, 0, 0.2);
+}
+
+.input-login {
+  width: 250px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 3%;
+  padding: 12px 45px;
+  outline: none;
+}
+
+.icon-inputs {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  margin-top: 4%;
+  margin-left: 1%;
+  background: #eee;
+}
+
+.icon-eyes {
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 70%;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background: #f04908;
+  border: none;
+  border-radius: 8px;
+  width: 250px;
+  height: 40px;
+  color: #1f1c18;
+  font-weight: bold;
+  margin-top: 7%;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.btn-submit:hover {
+  background: #17141d;
+  color: #ffffff;
+}
+
+.h1-login {
+  color: #f04908;
+  font-weight: bold;
+  margin-top: 5%;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.h1-login:hover {
+  color: #ffffff;
+}
+/*# sourceMappingURL=principal.css.map */
