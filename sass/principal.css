@@ -28,6 +28,11 @@
   height: 40px;
 }
 
+.navbar-fixed {
+  padding: 5px;
+  font-size: 10px !important;
+}
+
 @media screen and (max-width: 800px) {
   #name-barbearia {
     margin-right: 10%;
@@ -135,13 +140,14 @@ header {
 }
 
 .func {
+  padding-top: 1%;
   color: #ffffff;
 }
 
 .name-topico {
   color: #ffffff;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Lobster", cursive;
   margin: 8px;
   padding-bottom: 10px;
