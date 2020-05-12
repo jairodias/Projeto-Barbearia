@@ -1,5 +1,4 @@
 const connection = require('../../database/connection');
-const routes = require('../../routes');
 
 module.exports = {
     async create(request, response){
