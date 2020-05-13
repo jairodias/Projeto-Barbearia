@@ -57,8 +57,8 @@ header {
   border-radius: 10px;
   position: absolute;
   margin-left: 34%;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 320px;
   text-align: center;
   margin-top: 6%;
   background: rgba(0, 0, 0, 0.3);
@@ -74,12 +74,12 @@ header {
 }
 
 .input-login {
-  width: 250px;
+  width: 280px;
   height: 40px;
   border-radius: 8px;
   border: none;
   margin-top: 3%;
-  padding: 12px 45px;
+  padding-left: 45px;
   outline: none;
 }
 
@@ -94,10 +94,10 @@ header {
   background: #eee;
 }
 
-.icon-eyes {
+#open, #close {
   position: absolute;
   margin-top: 5%;
-  margin-left: 70%;
+  margin-left: 68%;
   font-size: 24px;
   cursor: pointer;
 }
@@ -106,7 +106,7 @@ header {
   background: #f04908;
   border: none;
   border-radius: 8px;
-  width: 250px;
+  width: 280px;
   height: 40px;
   color: #1f1c18;
   font-weight: bold;
@@ -371,6 +371,24 @@ body {
 
 .is-invalid {
   border: 2px solid rgba(174, 20, 30, 0.9);
+}
+
+#open-cadastro-confirm, #close-cadastro-confirm {
+  color: black !important;
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 88%;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#open-cadastro, #close-cadastro {
+  color: black !important;
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 40%;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {

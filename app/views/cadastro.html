@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro Dev</title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+
     <link rel="stylesheet" href="../assets/sass/principal.css">
-
-
      <!-- BOOTSTRAP CSS -->
      <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
      
@@ -25,8 +26,12 @@
                             <input type="email" class="input-cadastro" name="email" id="email" placeholder="Email *" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="input-cadastro-password" name="password" id="password" placeholder="Password *" required>
-                        <input type="text" class="input-cadastro-password" name="password1" id="password1" placeholder="Confirm Password *" required>
+                        <i class="far fa-eye icon-eyes" id="open-cadastro-confirm" hidden></i>
+                        <i class="fa fa-eye-slash icon-eyes" id="close-cadastro-confirm" aria-hidden="true"></i>
+                        <i class="far fa-eye icon-eyes" id="open-cadastro" hidden></i>
+                        <i class="fa fa-eye-slash icon-eyes" id="close-cadastro" aria-hidden="true"></i>
+                        <input type="password" class="input-cadastro-password" name="password" id="password" placeholder="Password *" required>
+                        <input type="password" class="input-cadastro-password" name="password1" id="password1" placeholder="Confirm Password *" required>
                     </div>
                     
                     <small class="small-form"> * Campos obrigatórios</small>
@@ -46,5 +51,6 @@
      <script src="../assets/js/sweetalert2.js"></script>
 
     <script src="../assets/js/cadastro.js"></script>
+    <script src="../assets/js/index.js"></script>
 </body>
 </html>
