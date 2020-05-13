@@ -369,6 +369,10 @@ body {
   float: left;
 }
 
+.is-invalid {
+  border: 2px solid rgba(174, 20, 30, 0.9);
+}
+
 @media screen and (max-width: 1000px) {
   .formulario {
     margin-top: 10%;
