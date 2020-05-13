@@ -1,12 +1,24 @@
+function checkPasswordForça(password){
+    var senha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+    return senha.test(password);
+}
+
+function checkEmail(email){
+    var email = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+    return email.test(email);
+}
+
 $(document).ready(function(){
     $('.btn-formulario').on('click', function(){
         var email = $('#email').val();
         var password = $('#password').val();
         var password1 = $('#password1').val();
-        var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-        var senha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+        
+        
         var flag = true;
-        if((!senha.test(password)) || (!senha.test(password1))){
+        if((!checkPasswordForça(password)) || (!checkPasswordForça(password1))){
             flag = false;
             Swal.fire(
                 'Ops!',
@@ -15,7 +27,7 @@ $(document).ready(function(){
             )
         }
 
-        if(!reg.test(email)){
+        if(!checkEmail(email)){
             flag = false;
             Swal.fire(
                 'Ops!',

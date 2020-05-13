@@ -14,4 +14,32 @@ $(document).ready(function(){
         $('#password').attr('type', 'password');
         $('#password1').attr('type', 'password');
     })
+
+    $(".btn-submit").on('click touch tap', function(){
+        var password = $(this).val();
+
+        if(checkPasswordForça(password)){
+            $.ajax({
+                url: `/login`,
+                type: "POST",
+                dataType: 'json',
+                data: $("#login").serialize(),
+                success: function (json) {
+                    if (json.status === 1) {
+                        Swal.fire(
+                            'Cadastrado com sucesso!',
+                            'Você será redirecionado para a página principal',
+                            'success'
+                        ).then((result) => {
+                            if(result.value){
+                                window.location.href = '/';
+                            }
+                        });
+                    } else {
+                        alert('Ops, falha em enviar menssagem');
+                    }
+                }
+            });
+        }
+    });
 })

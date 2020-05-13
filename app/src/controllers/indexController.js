@@ -14,5 +14,15 @@ module.exports = {
                 status: 1,
                 message: "Dados cadastrados com sucesso"
             });
+    },
+    async login(request, response){
+        const{email, password} = request.body;
+
+        const user = await connection('incidents')
+            .where('email', email)
+            .where('password', password)
+            .select('*');
+
+        console.log(user);
     }
 }

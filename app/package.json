@@ -8,6 +8,7 @@
     "express": "^4.17.1",
     "knex": "^0.21.1",
     "knex-migrate": "^1.7.4",
+    "session-file-store": "^1.4.0",
     "sqlite3": "^4.2.0",
     "webpack-dev-server": "^3.11.0"
   },
