@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const path = require('path');
 const auth = require('../controllers/authController');
-
+const verify = require('../middlewares/auth'); /**responsavel por fazer a verificação dos token */
 
 routes.get('/', (req, res) => {
   return res.sendFile(path.resolve('app/views/index.html'));

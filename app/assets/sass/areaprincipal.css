@@ -1,0 +1,87 @@
+body {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(59, 13, 13, 0.6)), to(rgba(59, 13, 13, 0.8))), url("../img/bg.jpg") center/cover fixed no-repeat;
+  background: linear-gradient(to right, rgba(59, 13, 13, 0.6), rgba(59, 13, 13, 0.8)), url("../img/bg.jpg") center/cover fixed no-repeat;
+}
+
+.area-cliente {
+  background: rgba(1, 1, 1, 0.5);
+  height: 560px;
+  border-radius: 28px;
+  margin-top: 3%;
+  text-align: center;
+  border: solid 1px #ffffff;
+}
+
+.img-cliente {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  margin-top: 5%;
+  margin-bottom: 4%;
+  border: solid 8px rgba(174, 10, 20, 0.7);
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.img-cliente:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+h1 {
+  font-family: "Lobster", cursive;
+  color: #ffffff;
+  font-size: 30px;
+  padding-top: 4%;
+}
+
+.area-cliente > .background-area {
+  background: rgba(238, 173, 45, 0.4);
+  width: 100%;
+  height: 330px;
+  border-radius: 28px;
+  text-align: center;
+  border: solid 1px #ffffff;
+}
+
+.area-info {
+  background: rgba(1, 1, 1, 0.5);
+  border-radius: 28px;
+  margin-top: 3%;
+}
+
+i {
+  font-size: 20px;
+  right: 20px;
+  position: relative;
+}
+
+.agendamentos, .saldo-cliente, .listar-atendimentos {
+  text-decoration: none;
+  border: none;
+  padding: 6px 12px;
+  width: 250px;
+  border-radius: 12px;
+  height: 50px;
+  background: #ffffff;
+  margin: 4%;
+  font-size: 20px;
+  outline: none;
+  font-family: "Lobster", cursive;
+  color: #FF3300;
+  font-weight: bold;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.agendamentos:hover, .saldo-cliente:hover, .listar-atendimentos:hover {
+  background: rgba(171, 0, 0, 0.6);
+  color: #ffffff;
+  transtion: all .5s ease-in-out;
+}
+
+.area-info {
+  margin-left: 4%;
+  border: solid 1px #ffffff;
+}
+/*# sourceMappingURL=areaprincipal.css.map */
