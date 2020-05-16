@@ -2,6 +2,7 @@ const connection = require('../../database/connection');
 
 module.exports = {
     async create(request, response){
+        console.log(request.body);
         const {name, password, email} = request.body;
 
             await connection('users').insert({
@@ -16,6 +17,7 @@ module.exports = {
             });
     },
     async login(request, response){
+        console.log(request.body);
         const{email, password} = request.body;
 
         const user = await connection('incidents')
