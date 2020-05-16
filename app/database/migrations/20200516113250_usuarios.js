@@ -6,7 +6,6 @@ exports.up = function(knex) {
     table.string('password').notNullable();
     table.string('passwordResetToken');
     table.date('passwordResetExpires');
-    table.timestamp(true);
   })
 };
 

@@ -1,13 +1,7 @@
-function checkPasswordForça(password){
-    var senha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-    return senha.test(password);
-}
-
-function checkEmail(email){
-    var email = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-
-    return email.test(email);
+function checkEmail(emailDigitado){
+    var email = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+    return email.test(emailDigitado.toLowerCase());
 }
 
 $(document).ready(function(){
@@ -18,15 +12,15 @@ $(document).ready(function(){
         
         
         var flag = true;
-        if((!checkPasswordForça(password)) || (!checkPasswordForça(password1))){
+        if((password.length < 8 ) || (password1.length < 8 )){
             flag = false;
             Swal.fire(
                 'Ops!',
-                'As senhas devem conter o mínimo de oito caracteres, pelo menos uma letra maiúscula, uma letra minúscula e um número',
+                'As senhas devem conter o mínimo de oito caracteres',
                 'error'
             )
         }
-
+        
         if(!checkEmail(email)){
             flag = false;
             Swal.fire(
@@ -67,7 +61,15 @@ $(document).ready(function(){
                             }
                         });
                     } else {
-                        alert('Ops, falha em enviar menssagem');
+                        Swal.fire(
+                            json.message,
+                            'Você será redirecionado para a página principal',
+                            'error'
+                        ).then((result) => {
+                            if(result.value){
+                                window.location.href = '/';
+                            }
+                        });
                     }
                 }
             });
