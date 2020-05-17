@@ -25,7 +25,7 @@ routes.post('/cadastrar', auth.create);
 
 routes.post('/login', auth.authenticate);
 
-routes.get('/areaCliente/:usuario', (req, res) => {
+routes.get('/areaCliente/:usuario', async (req, res) => {
   try{
     const usuario = await connection('usuarios').where('id', req.query.usuario).first();
 
@@ -41,7 +41,27 @@ routes.get('/areaCliente/:usuario', (req, res) => {
 });
 
 routes.get('/cliente', async (req, res) => {
-  
+  try{
+    const usuario  = await connection('usuarios').where('id', req.query.usuario).first();
+
+    if(!usuario) return res.json({ status: 0, message: 'Users not exists' });
+
+    const agendamentos = await connection('agendamentos').where('user_id', usuario.id);
+    const movimentacao = await connection('saldoUsuario').where('user_id', usuario.id);
+    
+    return res.json({
+      status: 1,
+      agendamentos: agendamentos,
+      movimentacao: movimentacao
+    });
+    
+  }catch(err){
+    return res.json({
+      status: 0,
+      message: err
+    });
+  }
+  console.log(req.body, req.query);
 })
 
 
