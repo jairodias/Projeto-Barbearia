@@ -1,5 +1,6 @@
 const connection = require('../database/connection');
 const crypto = require('crypto');
+const mailer = require('../modules/mailer');
 
 module.exports = {
   async create(req, res){
@@ -16,7 +17,7 @@ module.exports = {
 
       const id = crypto.randomBytes(5).toString('HEX');
       
-      await connection('agendamentos').insert({
+      const agendamento = await connection('agendamentos').insert({
         id,
         user_id,
         local,
@@ -26,6 +27,22 @@ module.exports = {
         profissional,
         atendido
       });
+
+      const usuario = await connection('usuarios').where('id', user_id).first();
+      console.log(usuario, agendamento);
+
+      mailer.sendMail({
+        to: 'asdasd@asdasd.com',
+        from: 'asdasd@asdasd.com',
+        template: 'notification',
+        context: {
+          usuario,
+          agendamento,
+          funcionario
+        }
+      })
+
+      console.log('funcionou');
 
     }catch(err){
       console.log("Erro" + err);
