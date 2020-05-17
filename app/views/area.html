@@ -19,13 +19,20 @@
 
 </head>
 <body>
+  <input type="hidden" id="token" name="token">
   <div class="container-fluid">
     <div class="row p-2 d-flex mx-auto nowrap justify-content-arround justify-content-center">
       <div class="col-3 mr-3 area-cliente">
-          <img class="img-cliente" src="../assets/img/profissional.jpg">
+        <div class="row-img">
+            <img class="img-cliente" src="../assets/img/profissional.jpg">
+            <span class="conjunto-file">
+                <input type="file" class="file">
+                <img class="img-file" src="https://img.icons8.com/plasticine/100/000000/switch-camera.png"/>
+            </span>
+            
+        </div>
         <div class="background-area">
             <h1> Pedro C. Gomes</h1>
-
             <button class="agendamentos">
                 <i class="far fa-calendar-alt"></i> Agendamentos</button>
             <button class="saldo-cliente"> 
@@ -38,10 +45,118 @@
           
       </div>
 
-      <div class="col-7 area-info">
+      <div class="col-7 area-info" id="agendamento">
+        <h2>Agendamentos</h2>
+        <div class="row d-flex justify-content-between items-align-center p-4">
+              <div class="col-2 text-center"><h3>Data</h3></div>
+              <div class="col-2 text-center"><h3>Horário</h3></div>
+              <div class="col-2 text-center"><h3>Valor</h3></div>
+              <div class="col-3 text-center"><h3>Profissional</h3></div>
+              <div class="col-3 text-center"><h3>Local</h3></div>
+        </div>
+              
+        <div class="row line-agendamento d-flex justify-content-between items-align-center p-4">
+            <div class="col-2 text-center"> 17/05/2020</div>
+            <div class="col-2 text-center"> 03:40 </div>
+            <div class="col-2 text-center"> R$ 25,00 </div>
+            <div class="col-3 text-center"> Higor Navalha</div>
+            <div class="col-3 text-center"> Vitória - ES</div>
+        </div>
 
+        <div class="row line-agendamento d-flex justify-content-between items-align-center p-4">
+            <div class="col-2 text-center"> 17/05/2020</div>
+            <div class="col-2 text-center"> 03:40 </div>
+            <div class="col-2 text-center"> R$ 25,00 </div>
+            <div class="col-3 text-center"> Higor Navalha</div>
+            <div class="col-3 text-center"> Vitória - ES</div>
+        </div>
+
+        <div class="row line-agendamento d-flex justify-content-between items-align-center p-4">
+            <div class="col-2 text-center"> 17/05/2020</div>
+            <div class="col-2 text-center"> 03:40 </div>
+            <div class="col-2 text-center"> R$ 25,00 </div>
+            <div class="col-3 text-center"> Higor Navalha</div>
+            <div class="col-3 text-center"> Vitória - ES</div>
+        </div>
+            
+        <button class="btn-plus-agendamento" data-toggle="modal" data-target="#modal-agendamento">
+            <img class="icon-agendamento-plus" src="https://img.icons8.com/ios/50/000000/add-reminder.png"/> 
+            Agendar novo horário 
+        </button>
       </div>
     </div>
+
+    <div class="modal" id="modal-agendamento" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <button class="barbearia-dev">
+                <div class="rotate">
+                    <h5>Barbearia-dev</h5>
+                    <div class="line-sublinhada"></div>
+                </div>
+              </button>
+              <div class="modal-header">
+                <h5 class="modal-title"> Agendar Horário</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label"> Horário: </label>
+                    <select class="form-control" name="horario">
+                        <option> 08:00 </option>
+                        <option> 09:00</option>
+                        <option> 10:00</option>
+                        <option> 11:00</option>
+                        <option> 12:00</option>
+                        <option> 13:00</option>
+                        <option> 14:00</option>
+                        <option> 15:00</option>
+                        <option> 16:00</option>
+                        <option> 17:00</option>
+                        <option> 18:00</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="recipient-name" class="col-form-label"> Local: </label>
+                      <select class="form-control" name="local">
+                        <option>Vitória-ES</option>
+                        <option>Vila Velha-ES</option>
+                        <option>Cariacica-ES</option>
+                      </select>
+                    </div>
+                  <div class="form-group">
+                      <label for="recipient-name" class="col-form-label"> Funcionário: </label>
+                      <select class="form-control" name="local">
+                        <option>Lucas Gillete</option>
+                        <option>Higor Navalha</option>
+                        <option>Pedro Juba</option>
+                        <option>Luis Corte</option>
+                      </select>
+                  </div>
+                  <button type="button" class="btn-agendar">
+                      <i class="fas fa-check" class="icon-agendar"></i>
+                      Agendar
+                    </button>
+                </form>
+              </div>
+          
+          </div>
+        </div>
+      </div>
   </div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="../assets/js/sweetalert2.js"></script>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+  <script src="../assets/js/area.js"></script>
+  <script src="../assets/js/index.js"></script>
 </body>
 </html>

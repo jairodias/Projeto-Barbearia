@@ -52,16 +52,21 @@ $(document).ready(function(){
                     if (json.status === 1) {
                         console.log(json);
                         Swal.fire(
-                            'Cadastrado com sucesso!',
-                            'Você será redirecionado para a página principal',
+                            'Logado!',
+                            'Você será redirecionado para a área do cliente',
                             'success'
                         ).then((result) => {
                             if(result.value){
-                                window.location.href = '/';
+                                setCookie("usuario", json.usuario, 1);
+                                window.location.href = '/areaCliente/' + json.usuario;
                             }
                         });
                     } else {
-                        alert('Ops, falha em enviar menssagem');
+                        Swal.fire(
+                            'Ops!',
+                            json.menssage,
+                            'error'
+                        )
                     }
                 }
             });

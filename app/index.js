@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 /** HABILITANDO AS PASTAS DE ESTILIZAÇÃO DO PROJETO */
 app.use('/assets', express.static(path.join(__dirname, '/assets')));
-
+app.set('view engine', 'pug');
 app.use(express.static(path.resolve('app/assets')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));

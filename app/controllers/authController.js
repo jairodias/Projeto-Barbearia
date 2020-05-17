@@ -1,4 +1,3 @@
-const express = require('express');
 const connection = require('../database/connection');
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
@@ -67,10 +66,10 @@ module.exports = {
             message: "Senha incorreta, tente novamente"
           });
         }
-
+      
         return response.json({
           status: 1,
-          token: generateToken({ id: usuario.id}),
+          usuario: usuario.id,
           message: "Bem vindo a nossa plataforma, aproveite !"
         })
 
@@ -81,6 +80,7 @@ module.exports = {
           message: 'Falha ao realizar login'
         })
       }
-    }
+    },
+  
 }
 

@@ -9,17 +9,22 @@ body
   text-align: center
   border: solid 1px #ffffff
 
+.row-img
+  position: relative
+  width: 40%
+  height: 38%
+  margin-top: 8%
+
 .img-cliente
   border-radius: 50%
   width: 180px
   height: 180px
-  margin-top: 5%
-  margin-bottom: 4%
   border: solid 8px rgba(174,10,20,0.7)
   transition: all 2s ease
+  position: absolute
 
-.img-cliente:hover
-  transform: scale(1.2)
+// .img-cliente:hover
+//   transform: scale(1.1)
 
 h1
   font-family: $fonte_principal
@@ -30,7 +35,7 @@ h1
 .area-cliente > .background-area
   background: rgba(238, 173, 45, 0.4)
   width: 100%
-  height: 330px
+  height: 300px
   border-radius: 28px
   text-align: center
   border: solid 1px #ffffff
@@ -40,6 +45,7 @@ h1
   background: rgba(1,1,1,0.5)
   border-radius: 28px
   margin-top: 3%
+  
 i
   font-size: 20px
   right: 20px
@@ -49,7 +55,7 @@ i
   text-decoration: none
   border: none
   padding: 6px 12px
-  width: 250px
+  width: 90%
   border-radius: 12px
   height: 50px
   background: #ffffff
@@ -66,7 +72,128 @@ i
   color: #ffffff
   transtion: all .5s ease-in-out
 
-
 .area-info
   margin-left: 4%
   border: solid 1px #ffffff
+
+.conjunto-file
+  position: absolute
+  bottom: 35px
+  margin-left: 57%
+  opacity: 0
+  transtion: all 2s ease
+
+.img-file
+  width: 45px
+  height: 45px
+  cursor: pointer
+
+
+input[type='file']
+  opacity: 0.02
+  position: absolute
+
+h2
+  font-family: $fonte_principal
+  color: $laranja_fluorescente
+  text-align: center
+
+#agendamento
+  align-items: center
+  padding: 2%
+
+h3
+  color: #ffffff
+  font-size: 20px
+
+.line-agendamento
+  background: rgba(255,255,255, 0.4)
+  border-radius: 28px
+  transition: all 2s ease
+  color: rgba(238, 225, 45, 0.9)
+  font-size: 18px
+  font-weight: bold
+  margin-top: 2%
+
+.btn-plus-agendamento
+  border: none
+  padding: 6px 12px
+  border-radius: 20px
+  width: 45%
+  height: 50px
+  margin-left: 28%
+  margin-top: 5%
+  transtion: all 2s ease
+  font-size: 20px
+  color: $laranja_fluorescente
+  font-weight: bold
+
+.btn-plus-agendamento:hover
+  background: rgba(174,10,20, 0.3)
+  color: #ffffff
+  font-weight: bold
+  font-size: 23px
+  transition: all 2s ease
+
+.icon-agendamento-plus
+  width: 35px
+  height: 35px
+  margin-right: 5%
+
+.modal-dialog
+  background: #ffffff
+  border-radius: 28px
+  margin-top: 8%
+
+.barbearia-dev
+  background: $dark
+  width: 160px
+  height: 160px
+  position: absolute
+  top: -18%
+  left: 30%
+  border-radius: 50%
+  border: solid 2px rgba(174,10,20,0.6)
+
+h5
+  color: #ffffff
+  font-family: $fonte_principal
+
+.line-sublinhada
+  border: solid 2px $laranja_fluorescente
+  width: 80%
+  margin-left: 10%
+  
+.rotate
+  transform: rotate(-10deg)
+
+.modal-title
+  margin-top: 15%
+
+  margin-left: 25%
+  font-weight: bold
+  font-family: $fonte_principal
+  color: $laranja_fluorescente
+  font-size: 30px
+
+select
+  outline: none
+
+.btn-agendar
+  width: 60%
+  margin-left: 20%
+  height: 50px
+  border: none
+  background: rgb(23, 20, 29)
+  font-family: $fonte_principal
+  color: $laranja_fluorescente
+  border-radius: 20px
+  font-size: 25px
+
+.icon-agendar
+  color: $laranja_fluorescente
+  width: 25px
+  height: 25px
+
+
+
