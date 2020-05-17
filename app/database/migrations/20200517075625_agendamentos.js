@@ -4,10 +4,13 @@ exports.up = function(knex) {
     table.string('id').primary();
     table.string('data').notNullable();
     table.string('horario').notNullable();
-    table.string('profissional').notNullable();
     table.string('local').notNullable();
     table.string('valor').notNullable();
     table.integer('atendido').notNullable();
+
+    table.string('profissional').notNullable();
+    table.foreign('profissional').references('id').inTable('profissionais');
+    
     table.string('user_id').notNullable();
     table.foreign('user_id').references('id').inTable('usuarios');
   
