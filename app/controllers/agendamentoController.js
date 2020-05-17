@@ -29,7 +29,6 @@ module.exports = {
       });
 
       const usuario = await connection('usuarios').where('id', user_id).first();
-      console.log(usuario, agendamento);
 
       mailer.sendMail({
         to: 'asdasd@asdasd.com',
@@ -38,13 +37,16 @@ module.exports = {
         context: {
           usuario,
           agendamento,
-          funcionario
+          funcionario,
         }
-      })
+      });
 
-      console.log('funcionou');
+      return res.json({
+        status: 1,
+        message: "Agendamento cadastrado com sucesso!"
+      });
 
-    }catch(err){
+    } catch (err){
       console.log("Erro" + err);
     }
     

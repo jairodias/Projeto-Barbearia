@@ -1,5 +1,6 @@
 var elemento = document.querySelector('.conjunto-file');
 var btnagendar = document.querySelector('.btn-agendar');
+var agendamento = document.querySelector('.corpo');
 
 $(".img-cliente").mouseover(function(){
   elemento.style.opacity = 0.7;
@@ -86,7 +87,44 @@ $(document).ready(function(){
     },
     success: function (json) {
         if (json.status === 1) {
-            
+          var dados = json.agendamentos;
+          for(var x in dados){
+            var elemento = document.createElement("div");
+              var elemento1 = document.createElement("div");
+              var elemento2 = document.createElement("div");
+              var elemento3 = document.createElement("div");
+              var elemento4 = document.createElement("div");
+              var elemento5 = document.createElement("div");
+
+              var data = document.createTextNode(dados[x].data);
+              var hora = document.createTextNode(dados[x].horario);
+              var profissional = document.createTextNode(dados[x].profissional);
+              var local = document.createTextNode(dados[x].local);
+              var valor = document.createTextNode(dados[x].valor);
+
+              elemento1.appendChild(data);
+              elemento2.appendChild(hora);
+              elemento3.appendChild(valor);
+              elemento4.appendChild(profissional);
+              elemento5.appendChild(local);
+
+              elemento.classList.add("row", "line-agendamento", "d-flex", "justify-content-between", "items-align-center", "p-4");
+              elemento1.classList.add('col-2', 'text-center');
+              elemento2.classList.add('col-2', 'text-center');
+              elemento3.classList.add('col-2', 'text-center');
+              elemento4.classList.add('col-3', 'text-center');
+              elemento5.classList.add('col-3', 'text-center');
+
+              elemento.appendChild(elemento1);
+              elemento.appendChild(elemento2);
+              elemento.appendChild(elemento3);
+              elemento.appendChild(elemento4);
+              elemento.appendChild(elemento5);
+
+            agendamento.appendChild(elemento);
+            console.log("funfionou")
+          }
+          
         } else {
             Swal.fire(
                 'Ops!',
