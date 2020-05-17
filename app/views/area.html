@@ -19,7 +19,6 @@
 
 </head>
 <body>
-  <input type="hidden" id="token" name="token">
   <div class="container-fluid">
     <div class="row p-2 d-flex mx-auto nowrap justify-content-arround justify-content-center">
       <div class="col-3 mr-3 area-cliente">
@@ -78,7 +77,7 @@
             <div class="col-3 text-center"> Higor Navalha</div>
             <div class="col-3 text-center"> Vitória - ES</div>
         </div>
-            
+        
         <button class="btn-plus-agendamento" data-toggle="modal" data-target="#modal-agendamento">
             <img class="icon-agendamento-plus" src="https://img.icons8.com/ios/50/000000/add-reminder.png"/> 
             Agendar novo horário 
@@ -102,14 +101,14 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form id="form-agendamento">
                   <div class="form-group">
                     <label for="recipient-name" class="col-form-label"> Horário: </label>
                     <select class="form-control" name="horario">
-                        <option> 08:00 </option>
-                        <option> 09:00</option>
-                        <option> 10:00</option>
-                        <option> 11:00</option>
+                        <option value="08:00"> 08:00 </option>
+                        <option value="09:00"> 09:00</option>
+                        <option value="10:00"> 10:00</option>
+                        <option value="11:00"> 11:00</option>
                         <option> 12:00</option>
                         <option> 13:00</option>
                         <option> 14:00</option>
@@ -117,6 +116,14 @@
                         <option> 16:00</option>
                         <option> 17:00</option>
                         <option> 18:00</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="recipient-name" class="col-form-label"> Funcionário: </label>
+                      <select class="form-control" name="dia">
+                        <option value="17/05/2020">17/05/2020</option>
+                        <option value="18/05/2020">18/05/2020</option>
+                        <option value="19/05/2020">19/05/2020</option>
                       </select>
                   </div>
                   <div class="form-group">
@@ -129,13 +136,14 @@
                     </div>
                   <div class="form-group">
                       <label for="recipient-name" class="col-form-label"> Funcionário: </label>
-                      <select class="form-control" name="local">
+                      <select class="form-control" name="funcionario">
                         <option>Lucas Gillete</option>
                         <option>Higor Navalha</option>
                         <option>Pedro Juba</option>
                         <option>Luis Corte</option>
                       </select>
                   </div>
+                  <input type="hidden" id="token" name="user_id">
                   <button type="button" class="btn-agendar">
                       <i class="fas fa-check" class="icon-agendar"></i>
                       Agendar

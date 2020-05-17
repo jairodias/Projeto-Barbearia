@@ -18,12 +18,29 @@ $(".img-cliente").mouseout(function(){
 })
 
 $(btnagendar).on('click', function(){
+  $("#token").val(getCookie("usuario"));
   Swal.fire(
     'Taxas de cancelamentos serão cobradas',
     'Receberá um email de confirmação em instantes',
     'info'
   ).then((value) => {
-
+    $.ajax({
+      url: `/create`,
+      type: "POST",
+      dataType: 'json',
+      data: $("#form-agendamento").serialize(),
+      success: function (json) {
+          if (json.status === 1) {
+              
+          } else {
+              Swal.fire(
+                  'Ops!',
+                  json.menssage,
+                  'error'
+              )
+          }
+      }
+    });
   });
 })
 
