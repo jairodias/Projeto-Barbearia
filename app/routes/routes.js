@@ -28,13 +28,13 @@ routes.post('/login', auth.authenticate);
 
 routes.get('/areaCliente/:usuario', async (req, res) => {
   try{
-    const usuario = await connection('usuarios').where('id', req.query.usuario).first();
+    const usuario = await connection('usuarios').where('id', req.params.usuario).first();
 
     if(!usuario)
       return res.status(400).send('Users not exists');
 
   }catch(err){
-
+      return res.redirect('/');
   }
   return res.sendFile(path.resolve('app/views/area.html'), {
     token: generateToken({id: req.query.usuario})
@@ -50,14 +50,11 @@ routes.get('/cliente', async (req, res) => {
     const agendamentos = await connection('agendamentos').where('user_id', usuario.id);
     const movimentacao = await connection('saldoUsuario').where('user_id', usuario.id);
     if(agendamentos){
-     agendamentos.forEach(async (data) => {
-      const funcionario = await connection('profissionais').where('id', data.profissional);
-      data.profissional = funcionario;
-      });
+     await Promise.all(agendamentos.map(async data => {
+      const funcionario = await connection('profissionais').where('id', data.profissional).first();
+       return data.profissional = funcionario.nome;
+      }));
     }
-
-    console.log(usuario, agendamentos, movimentacao);
-      
 
     return res.json({
       status: 1,
@@ -66,12 +63,12 @@ routes.get('/cliente', async (req, res) => {
     });
 
   }catch(err){
+    console.log("Error: " + err);
     return res.json({
       status: 0,
       message: err
     });
   }
-  console.log(req.body, req.query);
 })
 
 routes.post('/create', agendamento.create);
